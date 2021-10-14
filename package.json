@@ -1,0 +1,17 @@
+{
+  "name": "multimethods-research",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@arrows/dispatch": "^1.0.3",
+    "@arrows/multimethod": "^1.4.1"
+  }
+}
