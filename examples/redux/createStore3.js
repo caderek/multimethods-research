@@ -5,37 +5,37 @@ import { getType, types } from '@arrows/dispatch'
 
 const createStore = multi(
   method(
-    (args) =>
-      (typeof args[1] === 'function' && typeof args[2] === 'function') ||
-      (typeof args[2] === 'function' && typeof args[3] === 'function'),
+    (a, b, c, d) =>
+      (typeof b === 'function' && typeof c === 'function') ||
+      (typeof c === 'function' && typeof d === 'function'),
     () => {
       throw new Error('Several store enhancers')
     },
   ),
 
   method(
-    (args) => args[2] !== undefined && typeof args[2],
+    (a, b, c) => c !== undefined && typeof c !== 'function',
     () => {
       throw new Error(`Expected the enhancer to be a function.`)
     },
   ),
 
   method(
-    (args) => typeof args[1] === 'function',
+    (a, b) => typeof b === 'function',
     (reducer, enhancer) => {
       return enhancer(createStore)(reducer)
     },
   ),
 
   method(
-    (args) => typeof args[2] === 'function',
+    (a, b, c) => typeof c === 'function',
     (reducer, preloadedState, enhancer) => {
       return enhancer(createStore)(reducer, preloadedState)
     },
   ),
 
   method(
-    ([reducer]) => typeof reducer !== 'function',
+    (a) => typeof a !== 'function',
     () => {
       throw new Error(`Expected the root reducer to be a function.`)
     },
@@ -46,3 +46,13 @@ const createStore = multi(
     // Store creation code...
   }),
 )
+
+/** Usage */
+
+const enhancer = (createStore) => (reducer, preloadedState) => {
+  console.log({ createStore, reducer, preloadedState })
+}
+
+createStore({}, enhancer)
+createStore(() => {}, {}, enhancer)
+createStore(() => {}, {})
