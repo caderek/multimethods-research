@@ -23,6 +23,7 @@ function createStore(reducer, preloadedState, enhancer) {
     throw new Error(`Expected the root reducer to be a function.`)
   }
 
-  console.log('Creating store!', { reducer, preloadedState })
   // Store creation code...
 }
+
+export default createStore

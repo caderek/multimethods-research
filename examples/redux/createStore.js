@@ -30,6 +30,8 @@ const createStore = multi(
   }),
 
   method((reducer, preloadedState) => {
-    console.log('Creating store!', { reducer, preloadedState })
+    // Store creation code...
   }),
 )
+
+export default createStore

@@ -34,6 +34,7 @@ function handleEnhancersError() {
 }
 
 function create(reducer, preloadedState) {
-  console.log('Creating store!', { reducer, preloadedState })
   // Store creation code...
 }
+
+export default createStore

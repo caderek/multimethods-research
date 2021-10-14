@@ -15,6 +15,7 @@
     "@arrows/multimethod": "^1.4.1"
   },
   "devDependencies": {
+    "benny": "^3.7.0",
     "gramma": "^1.4.7"
   }
 }

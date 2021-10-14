@@ -42,17 +42,8 @@ const createStore = multi(
   ),
 
   method((reducer, preloadedState) => {
-    console.log('Creating store!', { reducer, preloadedState })
     // Store creation code...
   }),
 )
 
-/** Usage */
-
-const enhancer = (createStore) => (reducer, preloadedState) => {
-  console.log({ createStore, reducer, preloadedState })
-}
-
-createStore({}, enhancer)
-createStore(() => {}, {}, enhancer)
-createStore(() => {}, {})
+export default createStore
