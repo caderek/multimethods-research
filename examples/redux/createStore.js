@@ -1,5 +1,5 @@
 import { multi, method, _ } from '@arrows/multimethod'
-import { not, notIn } from './predicates'
+import { not, notIn } from './predicates.js'
 
 /* Direct translation */
 

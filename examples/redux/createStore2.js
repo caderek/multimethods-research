@@ -1,6 +1,6 @@
 import { multi, method, _ } from '@arrows/multimethod'
 import { getType, types } from '@arrows/dispatch'
-import { not, notIn } from './predicates'
+import { not, notIn } from './predicates.js'
 
 /* More elegant version with dispatch utils and separate functions */
 
