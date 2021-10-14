@@ -13,5 +13,8 @@
   "dependencies": {
     "@arrows/dispatch": "^1.0.3",
     "@arrows/multimethod": "^1.4.1"
+  },
+  "devDependencies": {
+    "gramma": "^1.4.7"
   }
 }
