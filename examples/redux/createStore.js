@@ -1,31 +1,32 @@
-import { multi, method, __ } from '@arrows/multimethod'
+import { multi, method, _ } from '@arrows/multimethod'
+import { not, notIn } from './predicates'
 
 /* Direct translation */
 
 const createStore = multi(
   (...args) => args.slice(0, 4).map((arg) => typeof arg),
 
-  method([__, 'function', 'function', __], () => {
+  method([_, 'function', 'function', _], () => {
     throw new Error('Several store enhancers')
   }),
 
-  method([__, __, 'function', 'function'], () => {
+  method([_, _, 'function', 'function'], () => {
     throw new Error('Several store enhancers')
   }),
 
-  method([__, __, __.notIn('function', undefined), __], () => {
+  method([_, _, notIn('function', undefined), _], () => {
     throw new Error(`Expected the enhancer to be a function.`)
   }),
 
-  method([__, 'function', __, __], (reducer, enhancer) => {
+  method([_, 'function', _, _], (reducer, enhancer) => {
     return enhancer(createStore)(reducer)
   }),
 
-  method([__, __, 'function', __], (reducer, preloadedState, enhancer) => {
+  method([_, _, 'function', _], (reducer, preloadedState, enhancer) => {
     return enhancer(createStore)(reducer, preloadedState)
   }),
 
-  method([__.not('function'), __, __, __], () => {
+  method([not('function'), _, _, _], () => {
     throw new Error(`Expected the root reducer to be a function.`)
   }),
 

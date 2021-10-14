@@ -1,5 +1,4 @@
-import { multi, method, __ } from '@arrows/multimethod'
-import { getType, types } from '@arrows/dispatch'
+import { multi, method } from '@arrows/multimethod'
 
 /* With custom dispatch per method */
 

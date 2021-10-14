@@ -3,7 +3,8 @@
   "api_key": "",
   "dictionary": [
     "createStore",
-    "gramma"
+    "gramma",
+    "libs"
   ],
   "language": "en-US",
   "rules": {

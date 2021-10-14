@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@arrows/dispatch": "^1.0.3",
-    "@arrows/multimethod": "^1.4.1"
+    "@arrows/multimethod": "^2.0.0"
   },
   "devDependencies": {
     "benny": "^3.7.0",
