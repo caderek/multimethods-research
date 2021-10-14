@@ -9,9 +9,9 @@ const enhancer = (createStore) => (reducer, preloadedState) => {}
 const benchmarks = (cases) =>
   cases.map(([name, createStore]) =>
     b.add(name, () => {
-      //   createStore({}, enhancer)
-      //     createStore(() => {}, {}, enhancer)
-      //     createStore(() => {}, {})
+      createStore({}, enhancer)
+      createStore(() => {}, {}, enhancer)
+      createStore(() => {}, {})
       createStore(() => {})
     }),
   )
